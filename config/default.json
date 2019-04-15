@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "nedb": "../data",
+  "authentication": {
+    "secret": "929e1eb182d63005c232ecfe760c0abd2fbabdbab2f742c928aa93c1aee8baf2c70bb39b528459e87fe9bb323a9b9259402a91f82b0fad71c6f5ff37c60193e807004adb0bc365d98691139d394f7fe8fa94a9299372ebf24e80bccce3c4ec93e40ae25a49e8ec887c81e3d299ef3821b5b09964715390b52c80f3ea5c24a0c72f242020b3da01f039b221bfd1f9e413ace95a2c1066424d861e316916dff4db5623aa56f797d84117429674e1965d8ceed60188551c627671911c4e3d95f34983903135010fdf99b2e7a99d3ce330d659d5f9d3f16707ac7ad070c514dd30ad934b722925b55e3988ecfde14b4b2f69c3f8943a38b7a40b650fcc3e0c13f82c",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/archat"
+}
